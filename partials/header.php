@@ -2,10 +2,10 @@
 <a href="#default" class="logo">La pdp de quelqu'un</a>
     <div class="header-right">
         <a href="">Acceuil</a>
-        <a href="">connexion</a>
-        <a href="">inscription</a>
+        <a href="">Connexion</a>
+        <a href="">Inscription</a>
         <a href="">Regles</a>
         <a href="">Jeu</a>
-        <a href="">profil/score</a>
+        <a href="">Profil</a>
     </div>
 </div>
