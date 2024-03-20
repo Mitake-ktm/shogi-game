@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Accueil - Shogi en ligne</title>
   <link rel="stylesheet" href="style/pageAccueil.css">
-    <link rel="stylesheet" href="style/Header.css">
+  <link rel="stylesheet" href="style/Header.css">
   <?php include 'partials/head.php'; ?>
 </head>
 <body>
@@ -20,19 +20,23 @@
           compétences.
         </p>
       </div>
-      <button class="">Jouer maintenant</button>
     </section>
-      <div class="square-box">
-        <p>
-          Compte du joueur
-        </p>
-      </div>
-            <div class="square-box">
-        <p>
-          Parametre
-        </p>
-      </div>
+    <div class="section-links">
+      <a href="profils.php" class="image-link">
+        <img src="assets/profilPageAccueil.jpeg" alt="Profil">
+        <span class="hover-text">Profil</span>
+      </a>
+      <a href="jeux.php" class="image-link">
+        <img src="assets/jeuPageAccueil.jpg" alt="Jeu">
+        <span class="hover-text">Jeu</span>
+      </a>
+      <a href="partie_speciale.php" class="image-link">
+        <img src="assets/jouerPageAccueil.jpg" alt="Règle">
+        <span class="hover-text">Règle</span>
+      </a>
+    </div>
   </main>
   <footer></footer>
+  <script src="script.js"></script>
 </body>
 </html>
