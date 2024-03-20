@@ -15,18 +15,17 @@
       <h1>Bienvenue sur Shogi en ligne !</h1>
       <div class="square-box">
         <p>
-          Le Shogi est un jeu de stratégie japonais passionnant. Jouez en ligne
-          contre d'autres joueurs ou contre l'ordinateur, et améliorez vos
-          compétences.
+          Le Shogi est un jeu de stratégie japonais. 
+          Jouez en ligne contre d'autres joueurs et améliorez vos compétences.
         </p>
       </div>
     </section>
     <div class="section-links">
-      <a href="profils.php" class="image-link">
+      <a href="profil.php" class="image-link">
         <img src="assets/profilPageAccueil.jpeg" alt="Profil">
         <span class="hover-text">Profil</span>
       </a>
-      <a href="jeux.php" class="image-link">
+      <a href="jeu.php" class="image-link">
         <img src="assets/jeuPageAccueil.jpg" alt="Jeu">
         <span class="hover-text">Jeu</span>
       </a>
