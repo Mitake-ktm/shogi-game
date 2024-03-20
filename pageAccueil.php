@@ -22,6 +22,16 @@
       </div>
       <button class="">Jouer maintenant</button>
     </section>
+      <div class="square-box">
+        <p>
+          Compte du joueur
+        </p>
+      </div>
+            <div class="square-box">
+        <p>
+          Parametre
+        </p>
+      </div>
   </main>
   <footer></footer>
 </body>

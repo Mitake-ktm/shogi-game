@@ -20,7 +20,7 @@ h1 {
 
 .square-box {
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.897); /* Fond transparent */
+  background-color: rgba(255, 255, 255, 0.3); /* Fond transparent */
   border: 2px solid #000; /* Bordure de 2px solide */
   border-radius: 10px; /* Bordure arrondie */
   margin-bottom: 20px;
