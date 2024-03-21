@@ -2,6 +2,8 @@ body {
   font-family: Arial, sans-serif;
   background-image: url(../assets/connexionBackground.jpg);
   background-size: cover;
+  margin: 0;
+  padding: 0;
 }
 
 .connexion {

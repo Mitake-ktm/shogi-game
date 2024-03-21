@@ -8,6 +8,7 @@
 </head>
 <body>
   <?php include 'partials/header.php'; ?>
+  <main>
 <div class="connexion">
   <?php
   if(isset($_POST['submit'])) {
@@ -38,6 +39,8 @@
       <button type="submit" name="submit">Connexion</button>
     </form>
   </div>
+  </main>
+  <footer></footer>
 </body>
 </div>
 </html>
