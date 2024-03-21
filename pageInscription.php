@@ -27,7 +27,7 @@
   }
   ?>
   <div class="container">
-    <h1>Inscription</h1>
+    <h1>Inscription </h1>
     <br>
     <form action="" method="post">
       <label for="username">Nom d'utilisateur</label>
