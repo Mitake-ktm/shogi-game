@@ -23,7 +23,7 @@
     <div class="section-links">
       <a href="pageProfil.php" class="image-link">
         <img src="assets/profilPageAccueil.jpeg" alt="Profil">
-        <span class="hover-text">Profil</span>
+        <span class="hover-text">Profil </span>
       </a>
       <a href="jeu.php" class="image-link">
         <img src="assets/jeuPageAccueil.jpg" alt="Jeu">
