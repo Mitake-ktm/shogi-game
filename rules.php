@@ -6,13 +6,14 @@ require_once './utils/common.php';
 <head>
     <?php require_once SITE_ROOT . 'partials/head.php'; ?>
     <link rel="stylesheet" href="style/rules.css">
+        <link rel="stylesheet" href="style/header.css">
+            <link rel="stylesheet" href="style/footer.css">
 </head>
 <body>
     <?php require_once SITE_ROOT . 'partials/header.php'; ?>
     <div class="rulesContainer">   
         <main>
-            <section id="introduction">
-                <h1>Introduction</h1>
+            <section>
                 <div class="square-box">
                     <p>Règles du Shogi</p>
                 </div>
@@ -132,6 +133,5 @@ require_once './utils/common.php';
     
     <?php require_once SITE_ROOT . 'partials/footer.php'; ?>
 
-    
 </body>
 </html>

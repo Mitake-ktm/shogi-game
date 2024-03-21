@@ -21,10 +21,18 @@ body {
   text-align: center;
 }
 
-title {
+.titre {
   text-align: center;
-  margin: auto;
-  color: #ff0000;
+  margin: auto auto 25px auto;
+  color: #000000;
+  font-size: 32px;
+}
+
+.sousTitre {
+  text-align: center;
+  margin: 10px auto 10px auto;
+  color: #000000;
+  font-size: 24px;
 }
 
 form {
@@ -37,16 +45,14 @@ label {
   color: #333;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="submit"] {
+input[type="text"] {
   width: 300px;
   padding: 12px;
   margin-bottom: 20px;
   border: 2px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
+  font-size: 18px;
 }
 
 button {
@@ -64,36 +70,7 @@ button:hover {
   background-color: #0056b3;
 }
 
-/* Media queries pour les écrans de taille moyenne */
-@media screen and (max-width: 768px) {
-  .container {
-    padding: 20px;
-  }
-
-  input[type="text"],
-  input[type="password"],
-  input[type="email"],
-  input[type="submit"],
-  button {
-    width: 100%;
-  }
-}
-
-/* Media queries pour les écrans de petite taille */
-@media screen and (max-width: 480px) {
-  .container {
-    padding: 10px;
-  }
-
-  h1 {
-    font-size: 24px;
-  }
-
-  input[type="text"],
-  input[type="password"],
-  input[type="email"],
-  input[type="submit"],
-  button {
-    padding: 10px;
-  }
+.ID {
+  text-align: center;
+  font-size: 32px;
 }

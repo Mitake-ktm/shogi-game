@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profil - Chess.com</title>
-  <link rel="stylesheet" href="style/profil.css">
+  <title>Profil</title>
+  <link rel="stylesheet" href="style/Pageprofil.css">
   <link rel="stylesheet" href="style/header.css">
   <link rel="stylesheet" href="style/footer.css">
 </head>
@@ -12,7 +12,6 @@
   <header>
   <?php include 'partials/header.php'; ?>
   </header>
-
   <main>
     <section class="profile-info">
       <div class="profile-details">
@@ -56,7 +55,6 @@
       </div>
     </section>
   </main>
-
   <script>
     document.getElementById('change-picture-btn').addEventListener('click', function() {
       document.getElementById('file-input').click();
@@ -74,6 +72,6 @@
       reader.readAsDataURL(file);
     });
   </script>
-    <footer><?php include 'partials/footer.php'; ?></footer>
+<?php include 'partials/footer.php'; ?>
 </body>
 </html>

@@ -1,7 +1,7 @@
 body {
   background-image: url(../assets/shogiPageAccueilBackground.png);
   background-size: cover;
-  font-family: Arial, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -20,13 +20,13 @@ h1 {
 
 .square-box {
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.9);
   border: 2px solid #000;
   border-radius: 10px;
   margin-bottom: 20px;
 }
 
-p {
+.titre {
   font-size: 24px;
   line-height: 1.6;
   margin-bottom: 20px;
@@ -57,9 +57,9 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
-  transition: opacity 0.5s ease;
-  color: rgb(255, 4, 0);
-  font-size: 48px;
+  transition: 0.4s ease;
+  color: rgb(255, 0, 0);
+  font-size: 64px;
 }
 
 .image-link:hover .hover-text {
