@@ -20,9 +20,9 @@ h1 {
 
 .square-box {
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.897); /* Fond transparent */
-  border: 2px solid #000; /* Bordure de 2px solide */
-  border-radius: 10px; /* Bordure arrondie */
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 2px solid #000;
+  border-radius: 10px;
   margin-bottom: 20px;
 }
 
@@ -32,12 +32,36 @@ p {
   margin-bottom: 20px;
 }
 
-button {
-  padding: 12px 24px;
-  background-color: #000;
-  color: beige;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.section-links {
+  text-align: center;
+}
+
+img {
+  width: 350px;
+  margin: 50px;
+  filter: none;
+}
+
+.image-link:hover img {
+  filter: blur(4px);
+}
+
+.image-link {
+  position: relative;
+  display: inline-block;
+}
+
+.hover-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  color: rgb(255, 4, 0);
+  font-size: 48px;
+}
+
+.image-link:hover .hover-text {
+  opacity: 1;
 }

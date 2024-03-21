@@ -5,9 +5,11 @@
   <title>Connexion</title>
   <link rel="stylesheet" href="style/pageConnexion.css">
   <link rel="stylesheet" href="style/Header.css">
+  <link rel="stylesheet" href="style/footer.css">
 </head>
 <body>
   <?php include 'partials/header.php'; ?>
+  <main>
 <div class="connexion">
   <?php
   if(isset($_POST['submit'])) {
@@ -38,6 +40,8 @@
       <button type="submit" name="submit">Connexion</button>
     </form>
   </div>
+  </main>
+  <footer><?php include 'partials/footer.php'; ?></footer>
 </body>
 </div>
 </html>
