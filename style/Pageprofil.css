@@ -6,10 +6,6 @@ body {
   padding: 0;
 }
 
-h1 {
-  margin: 0;
-}
-
 main {
   max-width: 800px;
   margin: 0 auto;
@@ -55,12 +51,6 @@ main {
 
 .stat-item h3 {
   margin-top: 0;
-}
-footer {
-  background-color: #000;
-  color: #fff;
-  text-align: center;
-  padding: 10px 0;
 }
 
 .settings {

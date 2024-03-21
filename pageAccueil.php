@@ -14,7 +14,7 @@
     <section>
       <h1>Bienvenue sur Shogi en ligne !</h1>
       <div class="square-box">
-        <p>
+        <p class="titre">
           Le Shogi est un jeu de stratégie japonais. 
           Jouez en ligne contre d'autres joueurs et améliorez vos compétences.
         </p>
@@ -36,6 +36,5 @@
     </div>
   </main>
   <footer><?php include 'partials/footer.php'; ?></footer>
-  <script src="script.js"></script>
 </body>
 </html>

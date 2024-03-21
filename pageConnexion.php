@@ -15,7 +15,8 @@
   if(isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
-
+    
+    //Base de donnée
     $db = new PDO('mysql:host=localhost;dbname=nom_de_la_base_de_donnees', 'utilisateur', 'mot_de_passe');
 
     $stmt = $db->prepare('SELECT * FROM utilisateurs WHERE username = ? AND password = ?');
@@ -30,8 +31,7 @@
   }
   ?>
   <div class="container">
-    <h1>Connexion</h1>
-    <br>
+    <h1 class="title">Connexion</h1>
     <form action="" method="post">
       <label for="username">Nom d'utilisateur</label>
       <input type="text" id="username" name="username" required>

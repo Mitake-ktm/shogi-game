@@ -27,8 +27,7 @@
   }
   ?>
   <div class="container">
-    <h1>Inscription </h1>
-    <br>
+    <h1 class="title">Inscription </h1>
     <form action="" method="post">
       <label for="username">Nom d'utilisateur</label>
       <input type="text" id="username" name="username" required>
@@ -42,5 +41,4 @@
 </div>
 <footer><?php include 'partials/footer.php'; ?></footer>
 </body>
-
 </html>
