@@ -5,6 +5,7 @@
   <title>Inscription</title>
   <link rel="stylesheet" href="style/pageInscription.css">
   <link rel="stylesheet" href="style/Header.css">
+  <link rel="stylesheet" href="style/footer.css">
 </head>
 <body>
   <?php include 'partials/header.php'; ?>
@@ -38,6 +39,8 @@
       <button type="submit" name="submit">Inscription</button>
     </form>
   </div>
-</body>
 </div>
+<footer><?php include 'partials/footer.php'; ?></footer>
+</body>
+
 </html>

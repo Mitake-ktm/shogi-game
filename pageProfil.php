@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profil - Chess.com</title>
   <link rel="stylesheet" href="style/profil.css">
-    <link rel="stylesheet" href="style/header.css">
+  <link rel="stylesheet" href="style/header.css">
+  <link rel="stylesheet" href="style/footer.css">
 </head>
 <body>
   <header>
@@ -73,5 +74,6 @@
       reader.readAsDataURL(file);
     });
   </script>
+    <footer><?php include 'partials/footer.php'; ?></footer>
 </body>
 </html>

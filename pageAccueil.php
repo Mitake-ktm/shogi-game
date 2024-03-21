@@ -6,6 +6,7 @@
   <title>Accueil - Shogi en ligne</title>
   <link rel="stylesheet" href="style/pageAccueil.css">
   <link rel="stylesheet" href="style/Header.css">
+  <link rel="stylesheet" href="style/footer.css">
   <?php include 'partials/header.php'; ?>
 </head>
 <body>
@@ -34,7 +35,7 @@
       </a>
     </div>
   </main>
-  <footer></footer>
+  <footer><?php include 'partials/footer.php'; ?></footer>
   <script src="script.js"></script>
 </body>
 </html>

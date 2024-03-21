@@ -5,6 +5,7 @@
   <title>Connexion</title>
   <link rel="stylesheet" href="style/pageConnexion.css">
   <link rel="stylesheet" href="style/Header.css">
+  <link rel="stylesheet" href="style/footer.css">
 </head>
 <body>
   <?php include 'partials/header.php'; ?>
@@ -40,7 +41,7 @@
     </form>
   </div>
   </main>
-  <footer></footer>
+  <footer><?php include 'partials/footer.php'; ?></footer>
 </body>
 </div>
 </html>
