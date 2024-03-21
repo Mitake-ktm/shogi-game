@@ -6,10 +6,9 @@
   <title>Accueil - Shogi en ligne</title>
   <link rel="stylesheet" href="style/pageAccueil.css">
   <link rel="stylesheet" href="style/Header.css">
-  <?php include 'partials/head.php'; ?>
+  <?php include 'partials/header.php'; ?>
 </head>
 <body>
-  <?php include 'partials/header.php'; ?>
   <main>
     <section>
       <h1>Bienvenue sur Shogi en ligne !</h1>
@@ -21,7 +20,7 @@
       </div>
     </section>
     <div class="section-links">
-      <a href="profil.php" class="image-link">
+      <a href="pageProfil.php" class="image-link">
         <img src="assets/profilPageAccueil.jpeg" alt="Profil">
         <span class="hover-text">Profil</span>
       </a>
