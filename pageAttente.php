@@ -1,3 +1,6 @@
+<?php
+require_once './utils/common.php';
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,7 +16,7 @@
     <div class="containerForm">
       <?php
       if(isset($_POST['submit'])) {
-        header("Location: game/jeu.php");
+        header("Location: jeu.php");
         exit();
       }
       ?>

@@ -1,3 +1,6 @@
+<?php
+require_once './utils/common.php';
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -25,11 +28,11 @@
         <img src="assets/profilPageAccueil.jpeg" alt="Profil">
         <span class="hover-text">Profil </span>
       </a>
-      <a href="jeu.php" class="image-link">
+      <a href="pageAttente.php" class="image-link">
         <img src="assets/jeuPageAccueil.jpg" alt="Jeu">
         <span class="hover-text">Jeu</span>
       </a>
-      <a href="partie_speciale.php" class="image-link">
+      <a href="rules.php" class="image-link">
         <img src="assets/jouerPageAccueil.jpg" alt="Règle">
         <span class="hover-text">Règle</span>
       </a>
