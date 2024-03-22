@@ -10,7 +10,7 @@
 }
 
 .plateau{
-    height: 85%;
+    display: inline;
 }
 
 .tuile{
