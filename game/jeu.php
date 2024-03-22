@@ -156,6 +156,6 @@
                 </script>
             </div>
         </div>
-        <?php require_once SITE_ROOT . 'partials/footer.php'; ?>   
+        <?php require_once SITE_ROOT . 'partials/footer.php'; ?>  
     </body>
 </html>
