@@ -146,7 +146,7 @@
         <div class="pageJeu">
             <!--affichage du titre de la page -->
             <div class="titre"> 
-                <h1>C'est à vous de jouer !<h1>
+                <h1>C'est à vous de jouer ! <h1>
             </div>
             <!-- affichage du plateau de jeu générer avec js -->
             <div class="plateau">
