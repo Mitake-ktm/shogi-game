@@ -47,7 +47,7 @@ CREATE TABLE `game` (
 --
 
 
-CREATE `user` (
+CREATE TABLE `user` (
   `id` int NOT NULL,
   `nom` varchar(64) NOT NULL,
   `mdp` varchar(64) NOT NULL,
@@ -64,19 +64,8 @@ CREATE `user` (
 -- Contraintes pour la table `game`
 --
 ALTER TABLE `game`
-  ADD PRIMARY KEY (`id`),
   ADD CONSTRAINT `game_ibfk_1` FOREIGN KEY (`idJoueur1`) REFERENCES `user` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `game_ibfk_2` FOREIGN KEY (`idJoueur2`) REFERENCES `user` (`id`) ON DELETE CASCADE;
-
-
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`ID`);
-
-ALTER TABLE `user`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
-
-ALTER TABLE `game`
-  MODIFY `ID` int UNSIGNED NOT NULL AUTO_INCREMENT;
 
 COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
