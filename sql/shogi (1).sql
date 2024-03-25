@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 22 mars 2024 à 13:35
+-- Généré le : lun. 25 mars 2024 à 08:37
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -24,22 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `caseplateau`
---
-
-DROP TABLE IF EXISTS `caseplateau`;
-CREATE TABLE IF NOT EXISTS `caseplateau` (
-  `idCase` int NOT NULL AUTO_INCREMENT,
-  `idGame` int NOT NULL,
-  `piece` varchar(32) NOT NULL,
-  `proprio` int NOT NULL,
-  PRIMARY KEY (`idCase`),
-  KEY `idGame` (`idGame`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `game`
 --
 
@@ -50,26 +34,11 @@ CREATE TABLE IF NOT EXISTS `game` (
   `idJoueur2` int NOT NULL,
   `codeGame` int NOT NULL,
   `aqui` int NOT NULL,
+  `plateau` json NOT NULL,
+  `parachute` json NOT NULL,
   PRIMARY KEY (`ID`),
   KEY `idJoueur1` (`idJoueur1`,`idJoueur2`),
   KEY `idJoueur2` (`idJoueur2`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `parachute`
---
-
-DROP TABLE IF EXISTS `parachute`;
-CREATE TABLE IF NOT EXISTS `parachute` (
-  `idParachute` int NOT NULL AUTO_INCREMENT,
-  `idJoueurProprio` int NOT NULL,
-  `idGame` int NOT NULL,
-  `piece` varchar(32) NOT NULL,
-  PRIMARY KEY (`idParachute`),
-  KEY `idJoueurProprio` (`idJoueurProprio`,`idGame`),
-  KEY `idGame` (`idGame`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -93,29 +62,11 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 --
--- Contraintes pour la table `caseplateau`
---
-ALTER TABLE `caseplateau`
-  ADD CONSTRAINT `caseplateau_ibfk_1` FOREIGN KEY (`idGame`) REFERENCES `game` (`ID`) ON DELETE CASCADE;
-
---
 -- Contraintes pour la table `game`
 --
 ALTER TABLE `game`
   ADD CONSTRAINT `game_ibfk_1` FOREIGN KEY (`idJoueur1`) REFERENCES `user` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `game_ibfk_2` FOREIGN KEY (`idJoueur2`) REFERENCES `user` (`id`) ON DELETE CASCADE;
-
---
--- Contraintes pour la table `parachute`
---
-ALTER TABLE `parachute`
-  ADD CONSTRAINT `parachute_ibfk_1` FOREIGN KEY (`idGame`) REFERENCES `game` (`ID`) ON DELETE CASCADE;
-
---
--- Contraintes pour la table `user`
---
-ALTER TABLE `user`
-  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`id`) REFERENCES `parachute` (`idJoueurProprio`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
