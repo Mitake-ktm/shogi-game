@@ -27,8 +27,7 @@ SET time_zone = "+00:00";
 -- Structure de la table `game`
 --
 
-DROP TABLE IF EXISTS `game`;
-CREATE TABLE IF NOT EXISTS `game` (
+CREATE TABLE `game` (
   `ID` int NOT NULL AUTO_INCREMENT,
   `idJoueur1` int NOT NULL,
   `idJoueur2` int NOT NULL,
@@ -39,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `game` (
   PRIMARY KEY (`ID`),
   KEY `idJoueur1` (`idJoueur1`,`idJoueur2`),
   KEY `idJoueur2` (`idJoueur2`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -47,15 +46,15 @@ CREATE TABLE IF NOT EXISTS `game` (
 -- Structure de la table `user`
 --
 
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE IF NOT EXISTS `user` (
+
+CREATE `user` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nom` varchar(64) NOT NULL,
   `mdp` varchar(64) NOT NULL,
   `score` int NOT NULL,
   `mail` varchar(128) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contraintes pour les tables déchargées
