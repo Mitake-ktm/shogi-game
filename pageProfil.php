@@ -6,7 +6,7 @@ require_once './utils/common.php';
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profil</title>
+  <title>Profil </title>
   <link rel="stylesheet" href="style/Pageprofil.css">
   <link rel="stylesheet" href="style/header.css">
   <link rel="stylesheet" href="style/footer.css">
