@@ -18,7 +18,13 @@ h1 {
   margin-bottom: 20px;
 }
 
-.square-box {
+img {
+  width: 350px;
+  margin: 50px;
+  filter: none;
+}
+
+.conteneur {
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.9);
   border: 2px solid #000;
@@ -32,26 +38,24 @@ h1 {
   margin-bottom: 20px;
 }
 
-.section-links {
+.liensSection {
   text-align: center;
 }
 
-img {
-  width: 350px;
-  margin: 50px;
-  filter: none;
-}
-
-.image-link:hover img {
-  filter: blur(4px);
-}
-
-.image-link {
+.lienImage {
   position: relative;
   display: inline-block;
 }
 
-.hover-text {
+.lienImage:hover img {
+  filter: blur(4px);
+}
+
+.lienImage:hover .texteSurvol {
+  opacity: 1;
+}
+
+.texteSurvol {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -60,8 +64,4 @@ img {
   transition: 0.4s ease;
   color: rgb(255, 0, 0);
   font-size: 64px;
-}
-
-.image-link:hover .hover-text {
-  opacity: 1;
 }

@@ -16,25 +16,25 @@ require_once './utils/common.php';
   <main>
     <section>
       <h1>Bienvenue sur Shogi en ligne !</h1>
-      <div class="square-box">
+      <div class="conteneur">
         <p class="titre">
           Le Shogi est un jeu de stratégie japonais. 
           Jouez en ligne contre d'autres joueurs et améliorez vos compétences.
         </p>
       </div>
     </section>
-    <div class="section-links">
-      <a href="pageProfil.php" class="image-link">
+    <div class="liensSection">
+      <a href="pageProfil.php" class="lienImage">
         <img src="assets/profilPageAccueil.jpeg" alt="Profil">
-        <span class="hover-text">Profil </span>
+        <span class="texteSurvol">Profil </span>
       </a>
-      <a href="pageAttente.php" class="image-link">
+      <a href="pageAttente.php" class="lienImage">
         <img src="assets/jeuPageAccueil.jpg" alt="Jeu">
-        <span class="hover-text">Jeu</span>
+        <span class="texteSurvol">Jeu</span>
       </a>
-      <a href="rules.php" class="image-link">
+      <a href="rules.php" class="lienImage">
         <img src="assets/jouerPageAccueil.jpg" alt="Règle">
-        <span class="hover-text">Règle</span>
+        <span class="texteSurvol">Règle</span>
       </a>
     </div>
   </main>

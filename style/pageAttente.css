@@ -6,13 +6,13 @@ body {
   padding: 0;
 }
 
-.containerForm {
+.conteneurFormulaire {
   display: flex;
   margin: 0;
   padding: 0;
 }
 
-.container {
+.conteneur {
   padding: 40px;
   background-color: rgba(255, 255, 255, 0.8);
   border: 4px solid rgba(41, 41, 41, 0.5);
@@ -70,7 +70,7 @@ button:hover {
   background-color: #0056b3;
 }
 
-.ID {
+.id {
   text-align: center;
   font-size: 32px;
 }

@@ -12,7 +12,7 @@ require_once './utils/common.php';
 </head>
 <body>
   <?php include 'partials/header.php'; ?>
-  <div class="connexion">
+  <div class="conteneurFormulaire">
   <?php
   if(isset($_POST['submit'])) {
     $username = $_POST['username'];
@@ -29,7 +29,7 @@ require_once './utils/common.php';
     exit;
   }
   ?>
-  <div class="container">
+  <div class="conteneur">
     <h1 class="title">Inscription </h1>
     <form action="" method="post">
       <label for="username">Nom d'utilisateur</label>
