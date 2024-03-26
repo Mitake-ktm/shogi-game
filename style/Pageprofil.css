@@ -1,7 +1,8 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: Cambria, Georgia, serif;
   background-image: url(../assets/backgroundProfil.jpeg);
   background-size: cover;
+  background-attachment: fixed;
   margin: 0;
   padding: 0;
 }

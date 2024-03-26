@@ -152,6 +152,7 @@
             <!-- affichage du plateau de jeu générer avec js -->
             <div class="plateau">
                 <div id="tableauContainer"></div>
+                <br>
                 <script>
                     document.getElementById("tableauContainer").innerHTML = genererTableauHTML(tableau);
                 </script>
