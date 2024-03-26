@@ -12,30 +12,30 @@ main {
   padding: 20px;
 }
 
-.profile-info {
+.profileInfo {
   background-color: #fff;
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 20px;
 }
 
-.profile-details {
+.profileDetails {
   display: flex;
   align-items: center;
 }
 
-.profile-picture {
+.profileImage {
   width: 100px;
   height: 100px;
   border-radius: 50%;
   margin-right: 20px;
 }
 
-.user-details {
+.utilisateurDetails {
   flex-grow: 1;
 }
 
-.user-details h2 {
+.utilisateurDetails h2 {
   margin-top: 0;
 }
 
@@ -45,22 +45,22 @@ main {
   padding: 20px;
 }
 
-.stat-item {
+.statsObjet {
   margin-bottom: 10px;
 }
 
-.stat-item h3 {
+.statsObjet h3 {
   margin-top: 0;
 }
 
-.settings {
+.paramètre {
   background-color: #fff;
   border-radius: 10px;
   padding: 20px;
   margin-top: 20px;
 }
 
-.settings button {
+.paramètre button {
   background-color: #007bff;
   color: #fff;
   border: none;
@@ -70,6 +70,6 @@ main {
   transition: background-color 0.3s ease;
 }
 
-.settings button:hover {
+.paramètre button:hover {
   background-color: #0056b3;
 }

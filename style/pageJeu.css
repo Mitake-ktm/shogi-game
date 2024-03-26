@@ -1,0 +1,24 @@
+.pageJeu {
+  background-image: url(../assets/inscriptionBackground.jpg);
+  background-size: cover;
+}
+
+.titre {
+  height: 9%;
+  display: flex;
+  justify-content: center;
+}
+
+.plateau {
+  display: inline;
+}
+
+.tuile {
+  width: 4.5em;
+  height: auto;
+}
+
+#tableauContainer {
+  display: flex;
+  justify-content: center;
+}

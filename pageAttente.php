@@ -13,14 +13,14 @@ require_once './utils/common.php';
 <body>
   <?php include 'partials/header.php'; ?>
   <main>
-    <div class="containerForm">
+    <div class="conteneurFormulaire">
       <?php
       if(isset($_POST['submit'])) {
-        header("Location: jeu.php");
+        header("Location: pageJeu.php");
         exit();
       }
       ?>
-      <div class="container">
+      <div class="conteneur">
         <h1 class="titre">Salle d'attente</h1>
         <form action="" method="post">
           <label for="username" class="sousTitre">Créer une partie</label>
@@ -36,7 +36,7 @@ require_once './utils/common.php';
   <footer><?php include 'partials/footer.php'; ?></footer>
 
   <dialog id="popupDialog">
-    <p class="ID">69FEUREZ</p>
+    <p class="id">69FEUREZ</p>
     <button id="closeDialog">Fermer</button>
   </dialog>
   <script>
