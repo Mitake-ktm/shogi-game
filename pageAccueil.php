@@ -6,7 +6,7 @@ require_once './utils/common.php';
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Accueil - Shogi en ligne</title>
+  <title>Accueil - Shogi en ligne</title>
   <link rel="stylesheet" href="style/pageAccueil.css">
   <link rel="stylesheet" href="style/Header.css">
   <link rel="stylesheet" href="style/footer.css">
