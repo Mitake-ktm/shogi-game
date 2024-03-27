@@ -33,107 +33,61 @@
     image:
     ici on mettra les coordonné de l'image qui va devoir être affiché
 */
-
-    var tableau = [
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"],
-        [0,0,"assets/bois.png"]
-    ];
-    function genererTableauHTML(tableau) {
-        var html = "<table border='5'>";
-        html += "<tr>";
-        for (var i = 0; i < tableau.length; i++) {
-            {
-                // Ajouter un gestionnaire d'événements au clic
-                html += "<td><img src='" + tableau[i][2] + "' alt='Image' class='tuile'></td>";
-            }
-            if(i % 9 == 8)
-            {
-                html += "</tr>";
-                html += "<tr>";
+var indexPremierClic = null; 
+    function remplirTableauMultipleFois() {
+        var tableau = [];
+        for (let i = 0; i < 9; i++) {
+            tableau[i] = [];
+            for (let j = 0; j < 9; j++) {
+                if (i == 1 && j == 1)
+                {
+                    tableau[i][j] = [0,0,"assets/rules.png"]; 
+                }
+                else
+                {
+                    tableau[i][j] = [0,0,"assets/bois.png"]; // Ou tout autre valeur par défaut que vous souhaitez
+                }
             }
         }
-        html += "</tr>"
-        html += "</table>";
-        return html;
+        return tableau;
+    }
+
+    // Utilisation de la fonction pour remplir le tableau avec 3 lignes
+    var tableau = remplirTableauMultipleFois();
+
+    // Affichage du tableau rempli
+        function genererTableauHTML(tableau) {
+            var html = "<table border='5'>";
+            
+            for (var i = 0; i < 9; i++) {
+            {
+                html += "<tr>";
+                for(var j = 0; j < 9; j++)
+                {
+                    html += "<td onclick='gererClic(this, " + i + ", " + j + ")'><img src='" + tableau[i][j][2] + "' alt='Image' class='tuile'></td>";
+                }
+                html += "</tr>"
+            }
+            
+            }
+            html += "</table>";
+            return html;
+        }
+
+        function gererClic(cellule, ligne, colonne) {
+        // Si c'est le premier clic, enregistrer l'index du premier élément et changer la couleur du texte
+        if (indexPremierClic === null) {
+            indexPremierClic = [ligne, colonne];
+            changerCouleurTexte(cellule);
+        } else {
+            // Sinon, échanger les éléments aux indices enregistrés
+            var temp = tableau[indexPremierClic[0]][indexPremierClic[1]];
+            tableau[indexPremierClic[0]][indexPremierClic[1]] = tableau[ligne][colonne];
+            tableau[ligne][colonne] = temp;
+            indexPremierClic = null; // Réinitialiser l'index du premier clic
+            // Mettre à jour le tableau dans la page web
+            document.getElementById("tableauContainer").innerHTML = genererTableauHTML(tableau);
+        }
     }
 </script>
 
