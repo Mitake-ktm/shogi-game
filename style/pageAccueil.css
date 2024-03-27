@@ -54,6 +54,7 @@ img {
 .lienImage {
   position: relative;
   display: inline-block;
+  height: 1px;
 }
 
 .lienImage:hover img {
@@ -66,9 +67,9 @@ img {
 
 .texteSurvol {
   position: absolute;
-  top: 50%;
+  top: 10%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 250%);
   opacity: 0;
   transition: 0.4s ease;
   color: rgb(255, 0, 0);
