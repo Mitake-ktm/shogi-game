@@ -14,7 +14,7 @@ $pdo = connectToDbAndGetPdo();
 </head>
 <body>
   <?php include 'partials/header.php'; ?>
-  <div class="connexion">
+  <div class="conteneurFormulaire">
   <?php
     if (!empty($_POST)) {
 
@@ -77,8 +77,8 @@ $pdo = connectToDbAndGetPdo();
         }
     }
 ?>
-  <div class="container">
-    <h1 class="title">Inscription </h1>
+  <div class="conteneur">
+    <h1 class="titre">Inscription </h1>
     <form action="#" method="POST">
       <label for="username">Nom d'utilisateur</label>
       <input type="text" id="nom" name="nom" required>
