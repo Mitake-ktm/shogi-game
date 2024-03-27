@@ -41,7 +41,7 @@ var indexPremierClic = null;
             for (let j = 0; j < 9; j++) {
                 if (i == 1 && j == 1)
                 {
-                    tableau[i][j] = [0,0,"assets/rules.png"]; 
+                    tableau[i][j] = [1,1,"assets/rules.png"]; 
                 }
                 else
                 {
@@ -76,10 +76,14 @@ var indexPremierClic = null;
 
         function gererClic(cellule, ligne, colonne) {
         // Si c'est le premier clic, enregistrer l'index du premier élément et changer la couleur du texte
-        if (indexPremierClic === null) {
+        if (indexPremierClic === null && tableau[ligne][colonne][1] != 0) 
+        {
             indexPremierClic = [ligne, colonne];
-            changerCouleurTexte(cellule);
-        } else {
+            //changerCouleurTexte(cellule);
+            console.log("clic");
+        } 
+        else if (indexPremierClic !== null)
+        {
             // Sinon, échanger les éléments aux indices enregistrés
             var temp = tableau[indexPremierClic[0]][indexPremierClic[1]];
             tableau[indexPremierClic[0]][indexPremierClic[1]] = tableau[ligne][colonne];
