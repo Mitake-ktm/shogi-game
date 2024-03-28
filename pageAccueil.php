@@ -20,7 +20,7 @@ require_once './utils/common.php';
     </div>
       <div class="conteneur">
         <p class="titre"> 
-          Jouez en ligne contre d'autres joueurs et améliorez vos compétences.
+           Jouez en ligne contre d'autres joueurs et améliorez vos compétences.
         </p>
       </div>
     </section>

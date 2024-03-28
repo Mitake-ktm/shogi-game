@@ -82,6 +82,7 @@ $pdo = connectToDbAndGetPdo();
     }
     
 ?>
+<div class="conteneurFormulaire">
   <div class="conteneur">
     <h1 class="titre">Inscription </h1>
     <form action="#" method="POST">
@@ -94,6 +95,7 @@ $pdo = connectToDbAndGetPdo();
       <button type="submit" name="submit">Inscription</button>
     </form>
   </div>
+</div>
 </div>
 <footer><?php include 'partials/footer.php'; ?></footer>
 </body>
