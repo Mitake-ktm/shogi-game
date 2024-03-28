@@ -2,8 +2,9 @@
 function connectToDbAndGetPdo() {
         $dbname = 'shogi';
         $host = 'localhost';
+        $port = '8889';
 
-        $dsn = "mysql:dbname=$dbname;host=$host;charset=utf8";
+        $dsn = "mysql:dbname=$dbname;host=$host;port=$port;charset=utf8";
         $user = 'root';
         $pass = 'root';
 
@@ -19,4 +20,3 @@ function connectToDbAndGetPdo() {
             echo 'La connexion à la base de données a échouée.';
         }
 }
-?>

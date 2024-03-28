@@ -1,5 +1,7 @@
 <?php
 require_once './utils/common.php';
+require_once './utils/database.php';
+$pdo = connectToDbAndGetPdo();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -14,33 +16,59 @@ require_once './utils/common.php';
   <?php include 'partials/header.php'; ?>
   <main>
 <div class="conteneurFormulaire">
-  <?php
-  if(isset($_POST['submit'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    
-    //Base de donnée
-    $db = new PDO('mysql:host=localhost;dbname=nom_de_la_base_de_donnees', 'utilisateur', 'mot_de_passe');
+<?php 
 
-    $stmt = $db->prepare('SELECT * FROM utilisateurs WHERE username = ? AND password = ?');
-    $stmt->execute([$username, $password]);
-    $user = $stmt->fetch();
+if (!empty($_POST)) {
 
-    if($user) {
-      echo "Connexion réussie!";
-    } else {
-      echo "Identifiants incorrects. Veuillez réessayer.";
+    if (isset($_POST['email']) && isset($_POST['passe'])) {
+        $pdoStatement = $pdo->prepare('SELECT id,nom,mdp FROM user WHERE mail = :email AND mdp = :mdp');
+        $pdoStatement->execute([
+            ':email' => $_POST['email'],
+            ':mdp'   => hash('sha256', $_POST['passe']),
+        ]);
+        $user = $pdoStatement->fetch();
+
+        if ($user) {
+            $_SESSION['userId'] = $user->id;
+
+            header('Location: pageProfil.php');
+            exit();
+        }
     }
-  }
-  ?>
+}
+
+if (isset($_SESSION['userId'])) {
+    $pdoStatement = $pdo->prepare('SELECT nom FROM user WHERE id = :id');
+    $pdoStatement->execute([
+        ':id' => $_SESSION['userId']
+    ]);
+    $user = $pdoStatement->fetch();
+
+    if ($user) {
+        $message_connexion = 'Connecté en tant que ' . $user->nom;
+    } 
+}
+
+?>
   <div class="conteneur">
     <h1 class="title">Connexion</h1>
     <form action="" method="post">
-      <label for="username" class="sousTitre">Nom d'utilisateur</label>
-      <input type="text" id="username" name="username" required>
+      <label for="username" class="sousTitre">Email</label>
+      <input type="text" name="email" id="email"  required>
       <label for="password" class="sousTitre">Mot de passe</label>
-      <input type="password" id="password" name="password" required>
+      <input type="password" name="passe" id="passe" required>
       <button type="submit" name="submit">Connexion</button>
+      <div class="erreur_php">
+        <p>
+            <?php
+            if (isset($message_connexion)) {
+                echo $message_connexion;
+            } elseif (isset($_POST['email']) && isset($_POST['passe']) && !isset($message_connexion)) {
+                echo "Mot de passe ou email incorrect";
+            }
+            ?>
+        </p>
+    </div>
     </form>
   </div>
   </main>

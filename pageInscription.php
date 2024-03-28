@@ -18,7 +18,6 @@ $pdo = connectToDbAndGetPdo();
   <?php
     if (!empty($_POST)) {
 
-        // Vérification de l'email
         if (isset($_POST['mail'])) {
             if (!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
                 $error_message_mail = "Le format de l'email n'est pas valide";
@@ -32,7 +31,6 @@ $pdo = connectToDbAndGetPdo();
             }
         }
 
-        // Vérification du pseudo
         if (isset($_POST['nom'])) {
             if (strlen($_POST['nom']) < 4) {
                 $error_message_pseudo = 'Le pseudo doit comporter au moins 4 caractères';
@@ -46,7 +44,6 @@ $pdo = connectToDbAndGetPdo();
             }
         }
 
-        // Vérification du mot de passe
         if (isset($_POST['mdp'])) {
             $password_regex = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/'; 
             if (!preg_match($password_regex, $_POST['mdp'])) {
@@ -54,28 +51,31 @@ $pdo = connectToDbAndGetPdo();
             }
         }
 
-        // Confirmation du mot de passe
         if (isset($_POST['confirm_password'])) {
             if ($_POST['confirm_password'] !== $_POST['mdp']) {
                 $error_message_passeconfirm = 'Les mots de passe ne correspondent pas';
             }
         }
 
-        // Insertion des données si aucune erreur n'a été rencontrée
+        
         if (!isset($error_message_mail) && 
             !isset($error_message_pseudo) && 
             !isset($error_message_passe) &&
             !isset($error_message_passeconfirm)) {
-            
-            $pdoStatement = $pdo->prepare('INSERT INTO user (nom, mdp, score, mail) VALUES (:nom, :mdp, :score, :mail)');
-            $pdoStatement->execute([
-                ':nom' => $_POST['nom'],
-                ':mdp' => hash('sha256', $_POST['mdp']), // Hash du mot de passe (à adapter selon vos besoins)
-                ':score' => 0, // Valeur par défaut pour le score, à adapter si nécessaire
-                ':mail' => $_POST['mail']
-            ]);
+        $pdoStatement = $pdo->prepare('INSERT INTO user (nom, mdp, score, mail) 
+                                       VALUES (:nom, :mdp, :score, :mail)');
+        $pdoStatement->execute([
+            ':nom' => $_POST['nom'],
+            ':mdp' => hash('sha256', $_POST['mdp']), 
+            ':score' => 0, 
+            ':mail' => $_POST['mail']
+        ]);
+        header('Location: pageProfil.php');
+        exit();
         }
+        
     }
+    
 ?>
   <div class="conteneur">
     <h1 class="titre">Inscription </h1>
