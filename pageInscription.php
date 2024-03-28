@@ -3,7 +3,7 @@ require_once './utils/common.php';
 require_once './utils/database.php';
 $pdo = connectToDbAndGetPdo();
 ?>
-<!DOCTYPE html >
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -14,8 +14,13 @@ $pdo = connectToDbAndGetPdo();
 </head>
 <body>
   <?php include 'partials/header.php'; ?>
-  <div class="conteneurFormulaire">
   <?php
+    // Déclaration des variables pour stocker les messages d'erreur
+    $error_message_mail = '';
+    $error_message_pseudo = '';
+    $error_message_passe = '';
+    $error_message_passeconfirm = '';
+
     if (!empty($_POST)) {
 
         // Vérification de l'email
@@ -62,34 +67,52 @@ $pdo = connectToDbAndGetPdo();
         }
 
         // Insertion des données si aucune erreur n'a été rencontrée
-        if (!isset($error_message_mail) && 
-            !isset($error_message_pseudo) && 
-            !isset($error_message_passe) &&
-            !isset($error_message_passeconfirm)) {
+        if (empty($error_message_mail) && 
+            empty($error_message_pseudo) && 
+            empty($error_message_passe) &&
+            empty($error_message_passeconfirm)) {
             
             $pdoStatement = $pdo->prepare('INSERT INTO user (nom, mdp, score, mail) VALUES (:nom, :mdp, :score, :mail)');
-            $pdoStatement->execute([
+            $success = $pdoStatement->execute([
                 ':nom' => $_POST['nom'],
                 ':mdp' => hash('sha256', $_POST['mdp']), // Hash du mot de passe (à adapter selon vos besoins)
                 ':score' => 0, // Valeur par défaut pour le score, à adapter si nécessaire
                 ':mail' => $_POST['mail']
             ]);
+
+            // Affichage du message de succès ou d'erreur via JavaScript
+            echo "<script>";
+            if ($success) {
+                echo "alert('Inscription réussie !');";
+            } else {
+                echo "alert('Une erreur est survenue lors de l\'inscription.');";
+            }
+            echo "</script>";
         }
     }
-?>
-  <div class="conteneur">
-    <h1 class="titre">Inscription </h1>
-    <form action="#" method="POST">
-      <label for="username">Nom d'utilisateur</label>
-      <input type="text" id="nom" name="nom" required>
-      <label for="email">Adresse e-mail</label>
-      <input type="email" id="mail" name="mail" required>
-      <label for="password">Mot de passe</label>
-      <input type="password" id="mdp" name="mdp" required>
-      <button type="submit" name="submit">Inscription</button>
-    </form>
+  ?>
+  <div class="conteneurFormulaire">
+    <div class="conteneur">
+      <h1 class="titre">Inscription </h1>
+      <form action="#" method="POST">
+        <label for="username">Nom d'utilisateur</label>
+        <input type="text" id="nom" placeholder="Kévin" name="nom" required>
+        <label for="email">Adresse e-mail</label>
+        <input type="email" id="mail" placeholder="kevinlebg@gmail.com" name="mail" required>
+        <label for="password">Mot de passe</label>
+        <input type="password" id="mdp" placeholder="KévinLebg/20" name="mdp" required>
+        <ul class="listeMDP">
+          <li>8 caractères minimum</li>
+          <li>Une lettre en majuscule</li>
+          <li>Une lettre en minuscule</li>
+          <li>Un chiffre</li>
+          <li>Un caractère spécial</li>
+        </ul>
+        <button type="submit" name="submit">Inscription</button>
+      </form>
+    </div>
   </div>
-</div>
+
 <footer><?php include 'partials/footer.php'; ?></footer>
 </body>
 </html>

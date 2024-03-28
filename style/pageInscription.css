@@ -72,3 +72,8 @@ button:hover {
   color: #000000;
   font-size: 24px;
 }
+
+.listeMDP {
+  text-align: left;
+  margin-top: -15px;
+}
