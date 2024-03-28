@@ -23,8 +23,14 @@ body {
 }
 
 .tuile {
-  width: 4.5em;
+  width: 5em;
   height: auto;
+}
+
+.tuileEnvers {
+  width: 5em;
+  height: auto;
+  transform: scaleY(-1);
 }
 
 #tableauContainer {
