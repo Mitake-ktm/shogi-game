@@ -4,10 +4,10 @@ require_once './utils/common.php';
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <?php require_once SITE_ROOT . 'partials/head.php'; ?>
     <link rel="stylesheet" href="style/pageRègle.css">
     <link rel="stylesheet" href="style/header.css">
     <link rel="stylesheet" href="style/footer.css">
+    <?php require_once SITE_ROOT . 'partials/head.php'; ?>
 </head>
 <body>
     <?php require_once SITE_ROOT . 'partials/header.php'; ?>
@@ -23,7 +23,7 @@ require_once './utils/common.php';
                 <h1 class="titre"><a href="#objectif">L'objectif</a></h1>
                 <div class="contenu">
                     <div class="empaquetage">
-                    <p>
+                    <p class="règlePacket">
                         Le but du Shogi est de capturer le roi adverse. 
                         Lorsque le roi ne peut pas éviter d'être pris au prochain coup, la partie se termine, et on dit que le roi est "Mat".
                     </p>
@@ -121,7 +121,7 @@ require_once './utils/common.php';
                 <h1 class="titre"><a href="#nulles">Parties nulles</a></h1>
                 <div class="contenu">
                         <div class="empaquetage">
-                <p>
+                <p class="règlePacket">
                 Une partie est nulle en cas de répétition de position ou si les deux rois entrent dans le camp adverse sans possibilité de mat. 
                 La règle des "27 points" peut également déclarer un joueur vainqueur si Gote atteint 27 points (28 pour Sente) au comptage des pièces.
                 </p>

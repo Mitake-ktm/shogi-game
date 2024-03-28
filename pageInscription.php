@@ -23,7 +23,6 @@ $pdo = connectToDbAndGetPdo();
 
     if (!empty($_POST)) {
 
-        // Vérification de l'email
         if (isset($_POST['mail'])) {
             if (!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
                 $error_message_mail = "Le format de l'email n'est pas valide";
@@ -37,7 +36,6 @@ $pdo = connectToDbAndGetPdo();
             }
         }
 
-        // Vérification du pseudo
         if (isset($_POST['nom'])) {
             if (strlen($_POST['nom']) < 4) {
                 $error_message_pseudo = 'Le pseudo doit comporter au moins 4 caractères';
@@ -51,7 +49,6 @@ $pdo = connectToDbAndGetPdo();
             }
         }
 
-        // Vérification du mot de passe
         if (isset($_POST['mdp'])) {
             $password_regex = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/'; 
             if (!preg_match($password_regex, $_POST['mdp'])) {
@@ -59,60 +56,45 @@ $pdo = connectToDbAndGetPdo();
             }
         }
 
-        // Confirmation du mot de passe
         if (isset($_POST['confirm_password'])) {
             if ($_POST['confirm_password'] !== $_POST['mdp']) {
                 $error_message_passeconfirm = 'Les mots de passe ne correspondent pas';
             }
         }
 
-        // Insertion des données si aucune erreur n'a été rencontrée
-        if (empty($error_message_mail) && 
-            empty($error_message_pseudo) && 
-            empty($error_message_passe) &&
-            empty($error_message_passeconfirm)) {
-            
-            $pdoStatement = $pdo->prepare('INSERT INTO user (nom, mdp, score, mail) VALUES (:nom, :mdp, :score, :mail)');
-            $success = $pdoStatement->execute([
-                ':nom' => $_POST['nom'],
-                ':mdp' => hash('sha256', $_POST['mdp']), // Hash du mot de passe (à adapter selon vos besoins)
-                ':score' => 0, // Valeur par défaut pour le score, à adapter si nécessaire
-                ':mail' => $_POST['mail']
-            ]);
-
-            // Affichage du message de succès ou d'erreur via JavaScript
-            echo "<script>";
-            if ($success) {
-                echo "alert('Inscription réussie !');";
-            } else {
-                echo "alert('Une erreur est survenue lors de l\'inscription.');";
-            }
-            echo "</script>";
+        
+        if (!isset($error_message_mail) && 
+            !isset($error_message_pseudo) && 
+            !isset($error_message_passe) &&
+            !isset($error_message_passeconfirm)) {
+        $pdoStatement = $pdo->prepare('INSERT INTO user (nom, mdp, score, mail) 
+                                       VALUES (:nom, :mdp, :score, :mail)');
+        $pdoStatement->execute([
+            ':nom' => $_POST['nom'],
+            ':mdp' => hash('sha256', $_POST['mdp']), 
+            ':score' => 0, 
+            ':mail' => $_POST['mail']
+        ]);
+        header('Location: pageProfil.php');
+        exit();
         }
+        
     }
-  ?>
-  <div class="conteneurFormulaire">
-    <div class="conteneur">
-      <h1 class="titre">Inscription </h1>
-      <form action="#" method="POST">
-        <label for="username">Nom d'utilisateur</label>
-        <input type="text" id="nom" placeholder="Kévin" name="nom" required>
-        <label for="email">Adresse e-mail</label>
-        <input type="email" id="mail" placeholder="kevinlebg@gmail.com" name="mail" required>
-        <label for="password">Mot de passe</label>
-        <input type="password" id="mdp" placeholder="KévinLebg/20" name="mdp" required>
-        <ul class="listeMDP">
-          <li>8 caractères minimum</li>
-          <li>Une lettre en majuscule</li>
-          <li>Une lettre en minuscule</li>
-          <li>Un chiffre</li>
-          <li>Un caractère spécial</li>
-        </ul>
-        <button type="submit" name="submit">Inscription</button>
-      </form>
-    </div>
+    
+?>
+  <div class="conteneur">
+    <h1 class="titre">Inscription </h1>
+    <form action="#" method="POST">
+      <label for="username">Nom d'utilisateur</label>
+      <input type="text" id="nom" name="nom" required>
+      <label for="email">Adresse e-mail</label>
+      <input type="email" id="mail" name="mail" required>
+      <label for="password">Mot de passe</label>
+      <input type="password" id="mdp" name="mdp" required>
+      <button type="submit" name="submit">Inscription</button>
+    </form>
   </div>
-
+</div>
 <footer><?php include 'partials/footer.php'; ?></footer>
 </body>
 </html>

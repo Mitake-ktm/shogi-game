@@ -73,7 +73,10 @@ button:hover {
   font-size: 24px;
 }
 
-.listeMDP {
-  text-align: left;
-  margin-top: -15px;
+.error-message {
+  background-color: #ffecec;
+  color: #cc0000;
+  border: 1px solid #cc0000;
+  padding: 10px;
+  margin-bottom: 10px;
 }
